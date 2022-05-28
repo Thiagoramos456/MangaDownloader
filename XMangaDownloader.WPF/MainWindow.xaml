@@ -9,6 +9,7 @@
     Title="MainWindow"
     Width="800"
     Height="450"
+    winui:WindowHelper.UseModernWindowStyle="True"
     mc:Ignorable="d">
     <Grid>
         <winui:SimpleStackPanel VerticalAlignment="Center" Spacing="30">
