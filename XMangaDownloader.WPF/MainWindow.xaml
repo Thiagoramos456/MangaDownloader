@@ -5,12 +5,13 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:XMangaDownloader.WPF"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:winui="http://schemas.modernwpf.com/2019"
     Title="MainWindow"
     Width="800"
     Height="450"
     mc:Ignorable="d">
     <Grid>
-        <StackPanel VerticalAlignment="Center" >
+        <winui:SimpleStackPanel VerticalAlignment="Center" Spacing="30">
             <TextBox
                 x:Name="URLInput"
                 Width="426"
@@ -27,6 +28,6 @@
                 VerticalAlignment="Top"
                 Background="#3380D608"
                 Content="Download" />
-        </StackPanel>
+        </winui:SimpleStackPanel>
     </Grid>
 </Window>
