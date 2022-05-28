@@ -1,0 +1,32 @@
+﻿<Window
+    x:Class="XMangaDownloader.WPF.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:XMangaDownloader.WPF"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Grid>
+        <StackPanel VerticalAlignment="Center" >
+            <TextBox
+                x:Name="URLInput"
+                Width="426"
+                Margin="0,0,0,0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                TextWrapping="Wrap" />
+            <Button
+                x:Name="DownloadManga"
+                Width="106"
+                Height="29"
+                Margin="0,0,0,0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Background="#3380D608"
+                Content="Download" />
+        </StackPanel>
+    </Grid>
+</Window>
