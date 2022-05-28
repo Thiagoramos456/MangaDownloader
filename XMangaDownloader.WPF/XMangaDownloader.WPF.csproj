@@ -16,4 +16,8 @@
     <PackageReference Include="ModernWpfUI" Version="0.9.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\XMangaDownloader.Core\XMangaDownloader.Core.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMangaDownloader.WPF", "XMangaDownloader.WPF\XMangaDownloader.WPF.csproj", "{629E3F0A-0525-4615-BD7F-1557C8C6E0AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XMangaDownloader.WPF", "XMangaDownloader.WPF\XMangaDownloader.WPF.csproj", "{629E3F0A-0525-4615-BD7F-1557C8C6E0AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMangaDownloader.Core", "XMangaDownloader.Core\XMangaDownloader.Core.csproj", "{9C57507A-0D94-4144-A38F-CDD049452824}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{629E3F0A-0525-4615-BD7F-1557C8C6E0AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{629E3F0A-0525-4615-BD7F-1557C8C6E0AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{629E3F0A-0525-4615-BD7F-1557C8C6E0AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C57507A-0D94-4144-A38F-CDD049452824}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C57507A-0D94-4144-A38F-CDD049452824}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C57507A-0D94-4144-A38F-CDD049452824}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C57507A-0D94-4144-A38F-CDD049452824}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

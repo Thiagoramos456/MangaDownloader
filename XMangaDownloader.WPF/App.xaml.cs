@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CommunityToolkit.Mvvm.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +15,15 @@ namespace XMangaDownloader.WPF
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            Ioc.Default.ConfigureServices(ConfigureServices(new ServiceCollection()));
+
+        }
+
+        private IServiceProvider ConfigureServices(ServiceCollection services)
+        {
+            return services.BuildServiceProvider();
+        }
     }
 }
