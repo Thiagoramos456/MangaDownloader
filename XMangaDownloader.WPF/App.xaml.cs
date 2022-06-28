@@ -7,6 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using XMangaDownloader.Core.Services;
 
 namespace XMangaDownloader.WPF
 {
@@ -18,11 +19,11 @@ namespace XMangaDownloader.WPF
         public App()
         {
             Ioc.Default.ConfigureServices(ConfigureServices(new ServiceCollection()));
-
         }
 
         private IServiceProvider ConfigureServices(ServiceCollection services)
         {
+            services.AddTransient<MangaService>();
             return services.BuildServiceProvider();
         }
     }

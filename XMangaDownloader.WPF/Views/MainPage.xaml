@@ -7,6 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewmodels="clr-namespace:XMangaDownloader.Core.ViewModels;assembly=XMangaDownloader.Core"
     xmlns:winui="http://schemas.modernwpf.com/2019"
+    xmlns:wpf="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
     Title="MainPage"
     d:DesignHeight="450"
     d:DesignWidth="800"
@@ -15,24 +16,41 @@
         <viewmodels:MangaDownloadViewModel x:Name="Vm" />
     </Page.DataContext>
     <Grid>
-        <winui:SimpleStackPanel VerticalAlignment="Center" Spacing="30">
-            <TextBox
-                Width="426"
-                Margin="0,0,0,0"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Top"
-                Text="{Binding MangaURL}"
-                TextWrapping="Wrap" />
-            <Button
-                x:Name="DownloadManga"
-                Width="106"
-                Height="29"
-                Margin="0,0,0,0"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Top"
-                Background="#3380D608"
-                Click="DownloadManga_Click"
-                Content="Download" />
-        </winui:SimpleStackPanel>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <winui:CommandBar VerticalAlignment="Top">
+            <winui:AppBarButton
+                Icon="Download"
+                IsEnabled="False"
+                Label="Download Current Chapter" />
+            <winui:AppBarButton
+                Icon="Download"
+                IsEnabled="True"
+                Label="Download All Chapters">
+                <winui:AppBarButton.Flyout>
+                    <winui:Flyout Placement="Bottom">
+                        <winui:SimpleStackPanel Spacing="14">
+                            <winui:SimpleStackPanel Orientation="Horizontal" Spacing="30">
+                                <winui:NumberBox
+                                    winui:ControlHelper.Header="Chap. Start"
+                                    winui:ControlHelper.PlaceholderText="ex:.. 0"
+                                    SpinButtonPlacementMode="Inline" />
+                                <winui:NumberBox
+                                    winui:ControlHelper.Header="Chap. End"
+                                    winui:ControlHelper.PlaceholderText="ex:.. 100"
+                                    SpinButtonPlacementMode="Inline" />
+                            </winui:SimpleStackPanel>
+                            <Button HorizontalAlignment="Center" Background="Green">Start Download</Button>
+                        </winui:SimpleStackPanel>
+                    </winui:Flyout>
+                </winui:AppBarButton.Flyout>
+            </winui:AppBarButton>
+        </winui:CommandBar>
+        <wpf:WebView2
+            x:Name="WebView"
+            Grid.Row="1"
+            NavigationStarting="WebView_NavigationStarting" />
     </Grid>
 </Page>

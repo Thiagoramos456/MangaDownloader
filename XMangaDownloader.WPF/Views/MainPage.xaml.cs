@@ -23,11 +23,24 @@ namespace XMangaDownloader.WPF.Views
         public MainPage()
         {
             InitializeComponent();
+            InitializeWebview();
         }
 
-        private void DownloadManga_Click(object sender, RoutedEventArgs e)
+        private async void DownloadManga_Click(object sender, RoutedEventArgs e)
         {
-            var url = Vm.MangaURL;
+            await Vm.GetMangasAsync();
+
+            MessageBox.Show("Download finalizado");
+        }
+
+        public async void InitializeWebview()
+        {
+            await WebView.EnsureCoreWebView2Async();
+            WebView.CoreWebView2.Navigate("https://mangaschan.com/");
+        }
+
+        private void WebView_NavigationStarting(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationStartingEventArgs e)
+        {
         }
     }
 }

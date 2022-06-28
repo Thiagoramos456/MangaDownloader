@@ -8,10 +8,8 @@
 
   <ItemGroup>
 	  <PackageReference Include="CommunityToolkit.Mvvm" Version="7.1.2" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Services\" />
+	  <PackageReference Include="iTextSharp.LGPLv2.Core" Version="1.8.0" />
+	  <PackageReference Include="AngleSharp" Version="0.16.1" />
   </ItemGroup>
 
 </Project>
