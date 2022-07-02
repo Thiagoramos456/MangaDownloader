@@ -22,8 +22,10 @@
         </Grid.RowDefinitions>
         <winui:CommandBar VerticalAlignment="Top">
             <winui:AppBarButton
+                x:Name="DownloadCurrentChapterBtn"
+                Click="DownloadManga_Click"
                 Icon="Download"
-                IsEnabled="False"
+                IsEnabled="{Binding CanFetchChapter}"
                 Label="Download Current Chapter" />
             <winui:AppBarButton
                 Icon="Download"
@@ -48,9 +50,16 @@
                 </winui:AppBarButton.Flyout>
             </winui:AppBarButton>
         </winui:CommandBar>
+        <winui:ProgressBar
+            Width="100"
+            Margin="20,0,0,0"
+            HorizontalAlignment="Left"
+            Foreground="Cyan"
+            IsIndeterminate="True" />
         <wpf:WebView2
             x:Name="WebView"
             Grid.Row="1"
-            NavigationStarting="WebView_NavigationStarting" />
+            
+            NavigationCompleted="WebView_NavigationCompleted" />
     </Grid>
 </Page>
